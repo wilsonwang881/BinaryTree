@@ -340,512 +340,502 @@ void nodeCountAux(bdt t, int &count);
 
 int main() {
 
-	//	std::cout << "set 1, testing 2 bits" << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::vector<std::string> vector_set1;
-	//
-	//	std::string in_set1 = "11";
-	//
-	//	vector_set1.push_back(in_set1);
-	//
-	//	in_set1 = "01";
-	//
-	//	vector_set1.push_back(in_set1);
-	//
-	//	bdt root_set1 = buildcompactbdt(vector_set1);
-	//
-	//	std::cout << "00 the result is: " << evalcompactbdt(root_set1, "00") << std::endl;
-	//
-	//	std::cout << "01 the result is: " << evalcompactbdt(root_set1, "01") << std::endl;
-	//
-	//	std::cout << "10 the result is: " << evalcompactbdt(root_set1, "10") << std::endl;
-	//
-	//	std::cout << "11 the result is: " << evalcompactbdt(root_set1, "11") << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "traversing the tree" << std::endl;
-	//
-	//	std::cout << "root is: " << root_set1->val << std::endl;
-	//
-	//	nodeList(root_set1);
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set1) << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	///////////////////////////////////////////////////////////////////////////////////////
-	//
-	//	std::cout << "set 2, testing 2 bits" << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::vector<std::string> vector_set2;
-	//
-	//	std::string in_set2 = "10";
-	//
-	//	vector_set2.push_back(in_set2);
-	//
-	//	in_set2 = "11";
-	//
-	//	vector_set2.push_back(in_set2);
-	//
-	//	in_set2 = "01";
-	//
-	//	vector_set2.push_back(in_set2);
-	//
-	//	bdt root_set2 = buildcompactbdt(vector_set2);
-	//
-	//	std::cout << "00 the result is: " << evalcompactbdt(root_set2, "00") << std::endl;
-	//
-	//	std::cout << "01 the result is: " << evalcompactbdt(root_set2, "01") << std::endl;
-	//
-	//	std::cout << "10 the result is: " << evalcompactbdt(root_set2, "10") << std::endl;
-	//
-	//	std::cout << "11 the result is: " << evalcompactbdt(root_set2, "11") << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "traversing the tree" << std::endl;
-	//
-	//	std::cout << "root is: " << root_set2->val << std::endl;
-	//
-	//	nodeList(root_set2);
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set2) << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	///////////////////////////////////////////////////////////////////////////////////////
-	//
-	//	std::cout << "set 3, testing 3 bits" << std::endl;
-	//
-	//	std::vector<std::string> vector_set3;
-	//
-	//	std::string in_set3 = "101";
-	//
-	//	vector_set3.push_back(in_set3);
-	//
-	//	in_set3 = "011";
-	//
-	//	vector_set3.push_back(in_set3);
-	//
-	//	in_set3 = "011";
-	//
-	//	vector_set3.push_back(in_set3);
-	//
-	//	bdt root_set3 = buildcompactbdt(vector_set3);
-	//
-	//	std::cout << "000 the result is: " << evalcompactbdt(root_set3, "000") << std::endl;
-	//
-	//	std::cout << "001 the result is: " << evalcompactbdt(root_set3, "001") << std::endl;
-	//
-	//	std::cout << "010 the result is: " << evalcompactbdt(root_set3, "010") << std::endl;
-	//
-	//	std::cout << "011 the result is: " << evalcompactbdt(root_set3, "011") << std::endl;
-	//
-	//	std::cout << "100 the result is: " << evalcompactbdt(root_set3, "100") << std::endl;
-	//
-	//	std::cout << "101 the result is: " << evalcompactbdt(root_set3, "101") << std::endl;
-	//
-	//	std::cout << "110 the result is: " << evalcompactbdt(root_set3, "110") << std::endl;
-	//
-	//	std::cout << "111 the result is: " << evalcompactbdt(root_set3, "111") << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "traversing the tree" << std::endl;
-	//
-	//	std::cout << "root is: " << root_set3->val << std::endl;
-	//
-	//	nodeList(root_set3);
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set3) << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	///////////////////////////////////////////////////////////////////////////////////////
-	//
-	//	std::cout << "set 4, testing 3 bits" << std::endl;
-	//
-	//	std::vector<std::string> vector_set4;
-	//
-	//	std::string in_set4 = "000";
-	//
-	//	vector_set4.push_back(in_set4);
-	//
-	//	in_set4 = "001";
-	//
-	//	vector_set4.push_back(in_set4);
-	//
-	//	in_set4 = "010";
-	//
-	//	vector_set4.push_back(in_set4);
-	//
-	//	in_set4 = "011";
-	//
-	//	vector_set4.push_back(in_set4);
-	//
-	//	in_set4 = "100";
-	//
-	//	vector_set4.push_back(in_set4);
-	//
-	//	in_set4 = "110";
-	//
-	//	vector_set4.push_back(in_set4);
-	//
-	//	in_set4 = "111";
-	//
-	//	vector_set4.push_back(in_set4);
-	//
-	//	bdt root_set4 = buildcompactbdt(vector_set4);
-	//
-	//	std::cout << "000 the result is: " << evalcompactbdt(root_set4, "000") << std::endl;
-	//
-	//	std::cout << "001 the result is: " << evalcompactbdt(root_set4, "001") << std::endl;
-	//
-	//	std::cout << "010 the result is: " << evalcompactbdt(root_set4, "010") << std::endl;
-	//
-	//	std::cout << "011 the result is: " << evalcompactbdt(root_set4, "011") << std::endl;
-	//
-	//	std::cout << "100 the result is: " << evalcompactbdt(root_set4, "100") << std::endl;
-	//
-	//	std::cout << "101 the result is: " << evalcompactbdt(root_set4, "101") << std::endl;
-	//
-	//	std::cout << "110 the result is: " << evalcompactbdt(root_set4, "110") << std::endl;
-	//
-	//	std::cout << "111 the result is: " << evalcompactbdt(root_set4, "111") << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "traversing the tree" << std::endl;
-	//
-	//	std::cout << "root is: " << root_set4->val << std::endl;
-	//
-	//	nodeList(root_set4);
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set4) << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	////////////////////////////////////////////////////////////////////////////////////////////
-	//
-	//	std::cout << "set 5, testing 3 bits" << std::endl;
-	//
-	//	std::vector<std::string> vector_set5;
-	//
-	//	std::string in_set5 = "000";
-	//
-	//	vector_set5.push_back(in_set5);
-	//
-	//	in_set5 = "001";
-	//
-	//	vector_set5.push_back(in_set5);
-	//
-	//	in_set5 = "010";
-	//
-	//	vector_set5.push_back(in_set5);
-	//
-	//	in_set5 = "011";
-	//
-	//	vector_set5.push_back(in_set5);
-	//
-	//	in_set5 = "100";
-	//
-	//	vector_set5.push_back(in_set5);
-	//
-	//	in_set5 = "101";
-	//
-	//	vector_set5.push_back(in_set5);
-	//
-	//	in_set5 = "110";
-	//
-	//	vector_set5.push_back(in_set5);
-	//
-	//	in_set5 = "111";
-	//
-	//	vector_set5.push_back(in_set5);
-	//
-	//	bdt root_set5 = buildcompactbdt(vector_set5);
-	//
-	//	std::cout << "000 the result is: " << evalcompactbdt(root_set5, "000") << std::endl;
-	//
-	//	std::cout << "001 the result is: " << evalcompactbdt(root_set5, "001") << std::endl;
-	//
-	//	std::cout << "010 the result is: " << evalcompactbdt(root_set5, "010") << std::endl;
-	//
-	//	std::cout << "011 the result is: " << evalcompactbdt(root_set5, "011") << std::endl;
-	//
-	//	std::cout << "100 the result is: " << evalcompactbdt(root_set5, "100") << std::endl;
-	//
-	//	std::cout << "101 the result is: " << evalcompactbdt(root_set5, "101") << std::endl;
-	//
-	//	std::cout << "110 the result is: " << evalcompactbdt(root_set5, "110") << std::endl;
-	//
-	//	std::cout << "111 the result is: " << evalcompactbdt(root_set5, "111") << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "traversing the tree" << std::endl;
-	//
-	//	std::cout << "root is: " << root_set5->val << std::endl;
-	//
-	//	nodeList(root_set5);
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set5) << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//
-	//	///////////////////////////////////////////////////////////////////////////////////////
-	//
-	//	std::cout << "set 6, testing 3 bits" << std::endl;
-	//
-	//	std::vector<std::string> vector_set6;
-	//
-	//	bdt root_set6 = buildcompactbdt(vector_set6);
-	//
-	//	std::cout << "000 the result is: " << evalcompactbdt(root_set6, "000") << std::endl;
-	//
-	//	std::cout << "001 the result is: " << evalcompactbdt(root_set6, "001") << std::endl;
-	//
-	//	std::cout << "010 the result is: " << evalcompactbdt(root_set6, "010") << std::endl;
-	//
-	//	std::cout << "011 the result is: " << evalcompactbdt(root_set6, "011") << std::endl;
-	//
-	//	std::cout << "100 the result is: " << evalcompactbdt(root_set6, "100") << std::endl;
-	//
-	//	std::cout << "101 the result is: " << evalcompactbdt(root_set6, "101") << std::endl;
-	//
-	//	std::cout << "110 the result is: " << evalcompactbdt(root_set6, "110") << std::endl;
-	//
-	//	std::cout << "111 the result is: " << evalcompactbdt(root_set6, "111") << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "traversing the tree" << std::endl;
-	//
-	//	std::cout << "root is: " << root_set6->val << std::endl;
-	//
-	//	nodeList(root_set6);
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set6) << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	/////////////////////////////////////////////////////////////////////////////////////////////
-	//
-	//	std::cout << "set 7, testing 4 bits" << std::endl;
-	//
-	//	std::vector<std::string> vector_set7;
-	//
-	//	std::string in_set7;
-	//
-	//	in_set7 = "0100";
-	//
-	//	vector_set7.push_back(in_set7);
-	//
-	//	in_set7 = "0001";
-	//
-	//	vector_set7.push_back(in_set7);
-	//
-	//	in_set7 = "1111";
-	//
-	//	vector_set7.push_back(in_set7);
-	//
-	//	in_set7 = "1100";
-	//
-	//	vector_set7.push_back(in_set7);
-	//
-	//	in_set7 = "0111";
-	//
-	//	vector_set7.push_back(in_set7);
-	//
-	//	in_set7 = "0101";
-	//
-	//	vector_set7.push_back(in_set7);
-	//
-	//	in_set7 = "1110";
-	//
-	//	vector_set7.push_back(in_set7);
-	//
-	//	in_set7 = "1111";
-	//
-	//	vector_set7.push_back(in_set7);
-	//
-	//	in_set7 = "1111";
-	//
-	//	vector_set7.push_back(in_set7);
-	//
-	//	in_set7 = "0011";
-	//
-	//	vector_set7.push_back(in_set7);
-	//
-	//	in_set7 = "0111";
-	//
-	//	vector_set7.push_back(in_set7);
-	//
-	//	in_set7 = "1011";
-	//
-	//	vector_set7.push_back(in_set7);
-	//
-	//	bdt root_set7 = buildcompactbdt(vector_set7);
-	//
-	//	std::cout << "0000 the result is: " << evalcompactbdt(root_set7, "0000") << std::endl;
-	//
-	//	std::cout << "0001 the result is: " << evalcompactbdt(root_set7, "0001") << std::endl;
-	//
-	//	std::cout << "0010 the result is: " << evalcompactbdt(root_set7, "0010") << std::endl;
-	//
-	//	std::cout << "0011 the result is: " << evalcompactbdt(root_set7, "0011") << std::endl;
-	//
-	//	std::cout << "0100 the result is: " << evalcompactbdt(root_set7, "0100") << std::endl;
-	//
-	//	std::cout << "0101 the result is: " << evalcompactbdt(root_set7, "0101") << std::endl;
-	//
-	//	std::cout << "0110 the result is: " << evalcompactbdt(root_set7, "0110") << std::endl;
-	//
-	//	std::cout << "0111 the result is: " << evalcompactbdt(root_set7, "0111") << std::endl;
-	//
-	//	std::cout << "1000 the result is: " << evalcompactbdt(root_set7, "1000") << std::endl;
-	//
-	//	std::cout << "1001 the result is: " << evalcompactbdt(root_set7, "1001") << std::endl;
-	//
-	//	std::cout << "1010 the result is: " << evalcompactbdt(root_set7, "1010") << std::endl;
-	//
-	//	std::cout << "1011 the result is: " << evalcompactbdt(root_set7, "1011") << std::endl;
-	//
-	//	std::cout << "1100 the result is: " << evalcompactbdt(root_set7, "1100") << std::endl;
-	//
-	//	std::cout << "1101 the result is: " << evalcompactbdt(root_set7, "1101") << std::endl;
-	//
-	//	std::cout << "1110 the result is: " << evalcompactbdt(root_set7, "1110") << std::endl;
-	//
-	//	std::cout << "1111 the result is: " << evalcompactbdt(root_set7, "1111") << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "traversing the tree" << std::endl;
-	//
-	//	std::cout << "root is: " << root_set7->val << std::endl;
-	//
-	//	nodeList(root_set7);
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set7) << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	///////////////////////////////////////////////////////////////////////////////////////
-	//
-	//	std::cout << "set 8, testing 4 bits" << std::endl;
-	//
-	//	std::vector<std::string> vector_set8;
-	//
-	//	std::string in_set8;
-	//
-	//	in_set8 = "0100";
-	//
-	//	vector_set8.push_back(in_set8);
-	//
-	//	in_set8 = "0001";
-	//
-	//	vector_set8.push_back(in_set8);
-	//
-	//	in_set8 = "1111";
-	//
-	//	vector_set8.push_back(in_set8);
-	//
-	//	in_set8 = "1100";
-	//
-	//	vector_set8.push_back(in_set8);
-	//
-	//	in_set8 = "0111";
-	//
-	//	vector_set8.push_back(in_set8);
-	//
-	//	bdt root_set8 = buildcompactbdt(vector_set8);
-	//
-	//	std::cout << "0000 the result is: " << evalcompactbdt(root_set8, "0000") << std::endl;
-	//
-	//	std::cout << "0001 the result is: " << evalcompactbdt(root_set8, "0001") << std::endl;
-	//
-	//	std::cout << "0010 the result is: " << evalcompactbdt(root_set8, "0010") << std::endl;
-	//
-	//	std::cout << "0011 the result is: " << evalcompactbdt(root_set8, "0011") << std::endl;
-	//
-	//	std::cout << "0100 the result is: " << evalcompactbdt(root_set8, "0100") << std::endl;
-	//
-	//	std::cout << "0101 the result is: " << evalcompactbdt(root_set8, "0101") << std::endl;
-	//
-	//	std::cout << "0110 the result is: " << evalcompactbdt(root_set8, "0110") << std::endl;
-	//
-	//	std::cout << "0111 the result is: " << evalcompactbdt(root_set8, "0111") << std::endl;
-	//
-	//	std::cout << "1000 the result is: " << evalcompactbdt(root_set8, "1000") << std::endl;
-	//
-	//	std::cout << "1001 the result is: " << evalcompactbdt(root_set8, "1001") << std::endl;
-	//
-	//	std::cout << "1010 the result is: " << evalcompactbdt(root_set8, "1010") << std::endl;
-	//
-	//	std::cout << "1011 the result is: " << evalcompactbdt(root_set8, "1011") << std::endl;
-	//
-	//	std::cout << "1100 the result is: " << evalcompactbdt(root_set8, "1100") << std::endl;
-	//
-	//	std::cout << "1101 the result is: " << evalcompactbdt(root_set8, "1101") << std::endl;
-	//
-	//	std::cout << "1110 the result is: " << evalcompactbdt(root_set8, "1110") << std::endl;
-	//
-	//	std::cout << "1111 the result is: " << evalcompactbdt(root_set8, "1111") << std::endl;
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "traversing the tree" << std::endl;
-	//
-	//	std::cout << "root is: " << root_set7->val << std::endl;
-	//
-	//	nodeList(root_set7);
-	//
-	//	std::cout << std::endl;
-	//
-	//	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set7) << std::endl;
-	//
-	//	std::cout << std::endl;
+	std::cout << "set 1, testing 2 bits" << std::endl;
 
-	std::vector<std::string> in;
+	std::cout << std::endl;
 
-	std::string test = "000000000000000000000000000000";
+	std::vector<std::string> vector_set1;
 
-	in.push_back(test);
+	std::string in_set1 = "11";
 
-	bdt root = buildcompactbdt(in);
+	vector_set1.push_back(in_set1);
 
-	std::cout << "evaluating 000000000000000000000000000000 " << evalcompactbdt(root, "000000000000000000000000000000") << std::endl;
+	in_set1 = "01";
 
-	std::vector<std::string> in1;
+	vector_set1.push_back(in_set1);
 
-	std::string test1 = "000000000000000000000000000001";
+	bdt root_set1 = buildcompactbdt(vector_set1);
 
-	in1.push_back(test1);
+	std::cout << "00 the result is: " << evalcompactbdt(root_set1, "00") << std::endl;
 
-	bdt root1 = buildcompactbdt(in1);
+	std::cout << "01 the result is: " << evalcompactbdt(root_set1, "01") << std::endl;
 
-	std::cout << "evaluating 000000000000000000000000000001 " << evalcompactbdt(root1, "000000000000000000000000000001") << std::endl;
+	std::cout << "10 the result is: " << evalcompactbdt(root_set1, "10") << std::endl;
+
+	std::cout << "11 the result is: " << evalcompactbdt(root_set1, "11") << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "traversing the tree" << std::endl;
+
+	std::cout << "root is: " << root_set1->val << std::endl;
+
+	nodeList(root_set1);
+
+	std::cout << std::endl;
+
+	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set1) << std::endl;
+
+	std::cout << std::endl;
+
+	///////////////////////////////////////////////////////////////////////////////////////
+
+	std::cout << "set 2, testing 2 bits" << std::endl;
+
+	std::cout << std::endl;
+
+	std::vector<std::string> vector_set2;
+
+	std::string in_set2 = "10";
+
+	vector_set2.push_back(in_set2);
+
+	in_set2 = "11";
+
+	vector_set2.push_back(in_set2);
+
+	in_set2 = "01";
+
+	vector_set2.push_back(in_set2);
+
+	bdt root_set2 = buildcompactbdt(vector_set2);
+
+	std::cout << "00 the result is: " << evalcompactbdt(root_set2, "00") << std::endl;
+
+	std::cout << "01 the result is: " << evalcompactbdt(root_set2, "01") << std::endl;
+
+	std::cout << "10 the result is: " << evalcompactbdt(root_set2, "10") << std::endl;
+
+	std::cout << "11 the result is: " << evalcompactbdt(root_set2, "11") << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "traversing the tree" << std::endl;
+
+	std::cout << "root is: " << root_set2->val << std::endl;
+
+	nodeList(root_set2);
+
+	std::cout << std::endl;
+
+	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set2) << std::endl;
+
+	std::cout << std::endl;
+
+	///////////////////////////////////////////////////////////////////////////////////////
+
+	std::cout << "set 3, testing 3 bits" << std::endl;
+
+	std::vector<std::string> vector_set3;
+
+	std::string in_set3 = "101";
+
+	vector_set3.push_back(in_set3);
+
+	in_set3 = "011";
+
+	vector_set3.push_back(in_set3);
+
+	bdt root_set3 = buildcompactbdt(vector_set3);
+
+	std::cout << "000 the result is: " << evalcompactbdt(root_set3, "000") << std::endl;
+
+	std::cout << "001 the result is: " << evalcompactbdt(root_set3, "001") << std::endl;
+
+	std::cout << "010 the result is: " << evalcompactbdt(root_set3, "010") << std::endl;
+
+	std::cout << "011 the result is: " << evalcompactbdt(root_set3, "011") << std::endl;
+
+	std::cout << "100 the result is: " << evalcompactbdt(root_set3, "100") << std::endl;
+
+	std::cout << "101 the result is: " << evalcompactbdt(root_set3, "101") << std::endl;
+
+	std::cout << "110 the result is: " << evalcompactbdt(root_set3, "110") << std::endl;
+
+	std::cout << "111 the result is: " << evalcompactbdt(root_set3, "111") << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "traversing the tree" << std::endl;
+
+	std::cout << "root is: " << root_set3->val << std::endl;
+
+	nodeList(root_set3);
+
+	std::cout << std::endl;
+
+	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set3) << std::endl;
+
+	std::cout << std::endl;
+
+	///////////////////////////////////////////////////////////////////////////////////////
+
+	std::cout << "set 4, testing 3 bits" << std::endl;
+
+	std::vector<std::string> vector_set4;
+
+	std::string in_set4 = "000";
+
+	vector_set4.push_back(in_set4);
+
+	in_set4 = "001";
+
+	vector_set4.push_back(in_set4);
+
+	in_set4 = "010";
+
+	vector_set4.push_back(in_set4);
+
+	in_set4 = "011";
+
+	vector_set4.push_back(in_set4);
+
+	in_set4 = "100";
+
+	vector_set4.push_back(in_set4);
+
+	in_set4 = "110";
+
+	vector_set4.push_back(in_set4);
+
+	in_set4 = "111";
+
+	vector_set4.push_back(in_set4);
+
+	bdt root_set4 = buildcompactbdt(vector_set4);
+
+	std::cout << "000 the result is: " << evalcompactbdt(root_set4, "000") << std::endl;
+
+	std::cout << "001 the result is: " << evalcompactbdt(root_set4, "001") << std::endl;
+
+	std::cout << "010 the result is: " << evalcompactbdt(root_set4, "010") << std::endl;
+
+	std::cout << "011 the result is: " << evalcompactbdt(root_set4, "011") << std::endl;
+
+	std::cout << "100 the result is: " << evalcompactbdt(root_set4, "100") << std::endl;
+
+	std::cout << "101 the result is: " << evalcompactbdt(root_set4, "101") << std::endl;
+
+	std::cout << "110 the result is: " << evalcompactbdt(root_set4, "110") << std::endl;
+
+	std::cout << "111 the result is: " << evalcompactbdt(root_set4, "111") << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "traversing the tree" << std::endl;
+
+	std::cout << "root is: " << root_set4->val << std::endl;
+
+	nodeList(root_set4);
+
+	std::cout << std::endl;
+
+	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set4) << std::endl;
+
+	std::cout << std::endl;
+
+	////////////////////////////////////////////////////////////////////////////////////////////
+
+	std::cout << "set 5, testing 3 bits" << std::endl;
+
+	std::vector<std::string> vector_set5;
+
+	std::string in_set5 = "000";
+
+	vector_set5.push_back(in_set5);
+
+	in_set5 = "001";
+
+	vector_set5.push_back(in_set5);
+
+	in_set5 = "010";
+
+	vector_set5.push_back(in_set5);
+
+	in_set5 = "011";
+
+	vector_set5.push_back(in_set5);
+
+	in_set5 = "100";
+
+	vector_set5.push_back(in_set5);
+
+	in_set5 = "101";
+
+	vector_set5.push_back(in_set5);
+
+	in_set5 = "110";
+
+	vector_set5.push_back(in_set5);
+
+	in_set5 = "111";
+
+	vector_set5.push_back(in_set5);
+
+	bdt root_set5 = buildcompactbdt(vector_set5);
+
+	std::cout << "000 the result is: " << evalcompactbdt(root_set5, "000") << std::endl;
+
+	std::cout << "001 the result is: " << evalcompactbdt(root_set5, "001") << std::endl;
+
+	std::cout << "010 the result is: " << evalcompactbdt(root_set5, "010") << std::endl;
+
+	std::cout << "011 the result is: " << evalcompactbdt(root_set5, "011") << std::endl;
+
+	std::cout << "100 the result is: " << evalcompactbdt(root_set5, "100") << std::endl;
+
+	std::cout << "101 the result is: " << evalcompactbdt(root_set5, "101") << std::endl;
+
+	std::cout << "110 the result is: " << evalcompactbdt(root_set5, "110") << std::endl;
+
+	std::cout << "111 the result is: " << evalcompactbdt(root_set5, "111") << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "traversing the tree" << std::endl;
+
+	std::cout << "root is: " << root_set5->val << std::endl;
+
+	nodeList(root_set5);
+
+	std::cout << std::endl;
+
+	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set5) << std::endl;
+
+	std::cout << std::endl;
+
+
+	///////////////////////////////////////////////////////////////////////////////////////
+
+	std::cout << "set 6, testing 3 bits" << std::endl;
+
+	std::vector<std::string> vector_set6;
+
+	bdt root_set6 = buildcompactbdt(vector_set6);
+
+	std::cout << "000 the result is: " << evalcompactbdt(root_set6, "000") << std::endl;
+
+	std::cout << "001 the result is: " << evalcompactbdt(root_set6, "001") << std::endl;
+
+	std::cout << "010 the result is: " << evalcompactbdt(root_set6, "010") << std::endl;
+
+	std::cout << "011 the result is: " << evalcompactbdt(root_set6, "011") << std::endl;
+
+	std::cout << "100 the result is: " << evalcompactbdt(root_set6, "100") << std::endl;
+
+	std::cout << "101 the result is: " << evalcompactbdt(root_set6, "101") << std::endl;
+
+	std::cout << "110 the result is: " << evalcompactbdt(root_set6, "110") << std::endl;
+
+	std::cout << "111 the result is: " << evalcompactbdt(root_set6, "111") << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "traversing the tree" << std::endl;
+
+	std::cout << "root is: " << root_set6->val << std::endl;
+
+	nodeList(root_set6);
+
+	std::cout << std::endl;
+
+	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set6) << std::endl;
+
+	std::cout << std::endl;
+
+	/////////////////////////////////////////////////////////////////////////////////////////////
+
+	std::cout << "set 7, testing 4 bits" << std::endl;
+
+	std::vector<std::string> vector_set7;
+
+	std::string in_set7;
+
+	in_set7 = "0100";
+
+	vector_set7.push_back(in_set7);
+
+	in_set7 = "0001";
+
+	vector_set7.push_back(in_set7);
+
+	in_set7 = "1111";
+
+	vector_set7.push_back(in_set7);
+
+	in_set7 = "1100";
+
+	vector_set7.push_back(in_set7);
+
+	in_set7 = "0111";
+
+	vector_set7.push_back(in_set7);
+
+	in_set7 = "0101";
+
+	vector_set7.push_back(in_set7);
+
+	in_set7 = "1110";
+
+	vector_set7.push_back(in_set7);
+
+	in_set7 = "0011";
+
+	vector_set7.push_back(in_set7);
+
+	in_set7 = "1011";
+
+	vector_set7.push_back(in_set7);
+
+	bdt root_set7 = buildcompactbdt(vector_set7);
+
+	std::cout << "0000 the result is: " << evalcompactbdt(root_set7, "0000") << std::endl;
+
+	std::cout << "0001 the result is: " << evalcompactbdt(root_set7, "0001") << std::endl;
+
+	std::cout << "0010 the result is: " << evalcompactbdt(root_set7, "0010") << std::endl;
+
+	std::cout << "0011 the result is: " << evalcompactbdt(root_set7, "0011") << std::endl;
+
+	std::cout << "0100 the result is: " << evalcompactbdt(root_set7, "0100") << std::endl;
+
+	std::cout << "0101 the result is: " << evalcompactbdt(root_set7, "0101") << std::endl;
+
+	std::cout << "0110 the result is: " << evalcompactbdt(root_set7, "0110") << std::endl;
+
+	std::cout << "0111 the result is: " << evalcompactbdt(root_set7, "0111") << std::endl;
+
+	std::cout << "1000 the result is: " << evalcompactbdt(root_set7, "1000") << std::endl;
+
+	std::cout << "1001 the result is: " << evalcompactbdt(root_set7, "1001") << std::endl;
+
+	std::cout << "1010 the result is: " << evalcompactbdt(root_set7, "1010") << std::endl;
+
+	std::cout << "1011 the result is: " << evalcompactbdt(root_set7, "1011") << std::endl;
+
+	std::cout << "1100 the result is: " << evalcompactbdt(root_set7, "1100") << std::endl;
+
+	std::cout << "1101 the result is: " << evalcompactbdt(root_set7, "1101") << std::endl;
+
+	std::cout << "1110 the result is: " << evalcompactbdt(root_set7, "1110") << std::endl;
+
+	std::cout << "1111 the result is: " << evalcompactbdt(root_set7, "1111") << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "traversing the tree" << std::endl;
+
+	std::cout << "root is: " << root_set7->val << std::endl;
+
+	nodeList(root_set7);
+
+	std::cout << std::endl;
+
+	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set7) << std::endl;
+
+	std::cout << std::endl;
+
+	///////////////////////////////////////////////////////////////////////////////////////
+
+	std::cout << "set 8, testing 4 bits" << std::endl;
+
+	std::vector<std::string> vector_set8;
+
+	std::string in_set8;
+
+	in_set8 = "0100";
+
+	vector_set8.push_back(in_set8);
+
+	in_set8 = "0001";
+
+	vector_set8.push_back(in_set8);
+
+	in_set8 = "1111";
+
+	vector_set8.push_back(in_set8);
+
+	in_set8 = "1100";
+
+	vector_set8.push_back(in_set8);
+
+	in_set8 = "0111";
+
+	vector_set8.push_back(in_set8);
+
+	bdt root_set8 = buildcompactbdt(vector_set8);
+
+	std::cout << "0000 the result is: " << evalcompactbdt(root_set8, "0000") << std::endl;
+
+	std::cout << "0001 the result is: " << evalcompactbdt(root_set8, "0001") << std::endl;
+
+	std::cout << "0010 the result is: " << evalcompactbdt(root_set8, "0010") << std::endl;
+
+	std::cout << "0011 the result is: " << evalcompactbdt(root_set8, "0011") << std::endl;
+
+	std::cout << "0100 the result is: " << evalcompactbdt(root_set8, "0100") << std::endl;
+
+	std::cout << "0101 the result is: " << evalcompactbdt(root_set8, "0101") << std::endl;
+
+	std::cout << "0110 the result is: " << evalcompactbdt(root_set8, "0110") << std::endl;
+
+	std::cout << "0111 the result is: " << evalcompactbdt(root_set8, "0111") << std::endl;
+
+	std::cout << "1000 the result is: " << evalcompactbdt(root_set8, "1000") << std::endl;
+
+	std::cout << "1001 the result is: " << evalcompactbdt(root_set8, "1001") << std::endl;
+
+	std::cout << "1010 the result is: " << evalcompactbdt(root_set8, "1010") << std::endl;
+
+	std::cout << "1011 the result is: " << evalcompactbdt(root_set8, "1011") << std::endl;
+
+	std::cout << "1100 the result is: " << evalcompactbdt(root_set8, "1100") << std::endl;
+
+	std::cout << "1101 the result is: " << evalcompactbdt(root_set8, "1101") << std::endl;
+
+	std::cout << "1110 the result is: " << evalcompactbdt(root_set8, "1110") << std::endl;
+
+	std::cout << "1111 the result is: " << evalcompactbdt(root_set8, "1111") << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "traversing the tree" << std::endl;
+
+	std::cout << "root is: " << root_set7->val << std::endl;
+
+	nodeList(root_set7);
+
+	std::cout << std::endl;
+
+	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root_set7) << std::endl;
+
+	std::cout << std::endl;
+
+	////////////////////////////////////////////////////////////////
+
+	std::cout << "set 9, testing 30 bits" << std::endl;
+
+	std::vector<std::string> in9;
+
+	std::string test9 = "000000000000000000000000000000";
+
+	in9.push_back(test9);
+
+	bdt root9 = buildcompactbdt(in9);
+
+	std::cout << "evaluating 000000000000000000000000000000 " << evalcompactbdt(root9, "000000000000000000000000000000") << std::endl;
+
+	std::cout << "traversing the tree" << std::endl;
+
+	std::cout << "root is: " << root9->val << std::endl;
+
+	nodeList(root9);
+
+	std::cout << std::endl;
+
+	std::cout << "the number of non-leaf nodes is: " << nodeCounter(root9) << std::endl;
+
+	std::cout << std::endl;
 
 	return 0;
 
@@ -875,8 +865,8 @@ bdt buildcompactbdt(const std::vector<std::string>& fvalues) {
 	}
 
 	//uncomment the following for testing
-	//	std::cout << "testing input array before simplifying" << std::endl;
-	//	array_gen->seq_2D_char_input_test();
+	std::cout << "testing input array before simplifying" << std::endl;
+	array_gen->seq_2D_char_input_test();
 
 	if(array_gen->check_available_routes()==array_gen->return_array_length_1D()){
 		bdt_array_root->val = "1";
@@ -942,9 +932,9 @@ bdt buildcompactbdt(const std::vector<std::string>& fvalues) {
 	array_gen->seq_2D_int_sort_priority_gen();
 
 	//uncomment the following for testing
-	//std::cout << "after simplification" << std::endl;
-	//array_gen->seq_2D_int_sort_test();
-	//array_gen->seq_2D_char_input_test();
+	std::cout << "after simplification" << std::endl;
+	array_gen->seq_2D_int_sort_test();
+	array_gen->seq_2D_char_input_test();
 
 	//create a table
 	//record the available routes
@@ -1004,12 +994,12 @@ bdt buildcompactbdt(const std::vector<std::string>& fvalues) {
 	}
 
 	//	testing
-	//	std::cout << "testing the available route array" << std::endl;
-	//	for (int i = 0; i < array_gen->check_available_routes(); i++) {
-	//		std::cout << available_route[i][0] << ' ' << available_route[i][1]
-	//																		<< std::endl;
-	//	}
-	//	std::cout << std::endl;
+	std::cout << "testing the available route array" << std::endl;
+	for (int i = 0; i < array_gen->check_available_routes(); i++) {
+		std::cout << available_route[i][0] << ' ' << available_route[i][1]
+																		<< std::endl;
+	}
+	std::cout << std::endl;
 
 	//start building the tree
 	bdt bdt_tmpp = bdt_array_root;
